@@ -38,22 +38,14 @@ public class VariablesTheme {
         short shortMax = Short.MAX_VALUE;
         int intMax = Integer.MAX_VALUE;
         long longMax = Long.MAX_VALUE;
-        System.out.println("Тип переменной byte:\n" + byteMax);
-        byteMax++;
-        System.out.println(byteMax);
-        byteMax--;
-        System.out.println(byteMax + "\nТип переменной short:\n" + shortMax);
-        shortMax++;
-        System.out.println(shortMax);
-        shortMax--;
-        System.out.println(shortMax + "\nТип переменной int:\n" + intMax);
-        intMax++;
-        System.out.println(intMax);
-        intMax--;
-        System.out.println(intMax + "\nТип переменной long:\n" + longMax);
-        longMax++;
-        System.out.println(longMax);
-        longMax--;
+        System.out.println("Тип переменной byte:\n" + byteMax + "\n" + ++byteMax + 
+            "\n" + --byteMax);
+        System.out.println("\nТип переменной short:\n" + shortMax + "\n" + ++shortMax + 
+            "\n" + --shortMax);
+        System.out.println("\nТип переменной int:\n" + intMax + "\n" + ++intMax + "\n" + --intMax);
+        System.out.println("\nТип переменной long:\n" + longMax + "\n" + ++longMax + 
+            "\n" + --longMax);
+
 
         System.out.println("\n5. Перестановка значений переменных");
         int num1 = 2;
@@ -61,8 +53,8 @@ public class VariablesTheme {
         System.out.println("I. Перестановка с помощью третьей переменной. Исходные значения:" + 
                 "\nПервая переменная = " + num1 + ", Вторая переменная = "+num2);
         int tmp = num1;
-        num1=num2;
-        num2=tmp;
+        num1 = num2;
+        num2 = tmp;
         System.out.println("Новые значения: Перая переменная = " + num1 + 
                 ", Вторая переменная = " + num2 + 
                 "\nII. C помощью арифметических операций. Исходные значения:" + 
@@ -119,16 +111,16 @@ public class VariablesTheme {
         int num4 = 345;
         int hundreds = num4 / 100;
         int dozens = num4 / 10 % 10;
-        int units = num4 % 100 % 10;
-        int sum = num4 + dozens + units;
-        int mult = num4 * dozens * units;
+        int ones = num4 % 100 % 10;
+        int sum = num4 + dozens + ones;
+        int mult = num4 * dozens * ones;
         System.out.println("Cумма цифр числа " + num4 + " = " + sum + 
                 "\nПроизведение цифр числа " + num4 + " = " + mult);
 
         System.out.println("\n10. Преобразование секунд");
         int sec = 86399;
         int hours = sec / 3600;
-        int minutes = (sec % 3600 ) /60 ;
+        int minutes = (sec / 60 ) % 60;
         int seconds = sec % 60;
         System.out.println(hours + ":" + minutes + ":" + seconds);
     }
