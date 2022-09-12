@@ -27,7 +27,7 @@ public class IfElseStatementTheme {
         } else if(firstLetterOfName == 'I') {
             System.out.println("Твое имя начинается на I");
         } else {
-            System.out.println("Это вобще имя?");
+            System.out.println("Это вообще имя?");
         }
 
         System.out.println("\n2. Поиск max и min числа");
@@ -80,24 +80,24 @@ public class IfElseStatementTheme {
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду");
         char symbol = '\u0057';
-        if(symbol >= 0 & symbol <= 47 | symbol >= 58 & symbol <= 64 |symbol >= 91 & symbol <= 96 | symbol >= 123) {
-            System.out.println("Символ " + symbol + " не число и не буква");
-        } else if(symbol >= 48 & symbol <= 57) {
+        if(symbol >= 48 && symbol <= 57) {
             System.out.println("Символ " + symbol + " цифра");
-        } else if(symbol >= 65 & symbol <= 90) {
+        } else if(symbol >= 65 && symbol <= 90) {
             System.out.println("Символ " + symbol + " это большая буква");
-        } else {
+        } else if(symbol  >=97 && symbol <= 122) {
             System.out.println("Символ " + symbol + " это маленькая буква");
+        } else {
+            System.out.println("Символ " + symbol + " не число и не буква");
         }
 
-        System.out.println("\n6. Определение буквы, числа или символа по их коду");
+        System.out.println("\n6. Определение суммы вклада и начисленных банком %");
         double deposit = 300000;
         double accruedInterest = 0;
         double finalSum = 0;
         if(deposit < 100000) {
             finalSum = deposit * 1.05;
             accruedInterest = finalSum - deposit;
-        } else if(deposit >= 100000 & deposit <= 300000){
+        } else if(deposit >= 100000 && deposit <= 300000){
             finalSum = deposit * 1.07;
             accruedInterest = finalSum - deposit;
         } else {
@@ -114,18 +114,18 @@ public class IfElseStatementTheme {
         int progScore = 0;
         if(historyPercent <= 60) {
             historyScore = 2;
-        } else if(historyScore > 60 & historyScore<=73) {
+        } else if(historyScore > 60 && historyScore <= 73) {
             historyScore = 3;
-        } else if (historyScore > 73 & historyScore <= 91) {
+        } else if (historyScore > 73 && historyScore <= 91) {
             historyScore= 4;
         } else {
             historyScore = 5;
         }
         if(progPercent <= 60) {
             progScore = 2;
-        } else if(progScore > 60 & progScore <= 73) {
+        } else if(progScore > 60 && progScore <= 73) {
             progScore = 3;
-        } else if (progScore > 73 & progScore <= 91) {
+        } else if (progScore > 73 && progScore <= 91) {
             progScore = 4;
         } else {
             progScore = 5;
@@ -152,23 +152,32 @@ public class IfElseStatementTheme {
 
         System.out.println("\n9. Подсчет количества банкнот");
         int cash = 567;
-        int atmBill1 = 100;
-        int atmBill2 = 10;
-        int atmBill3 = 1;
+        int atmBill100 = 124; // количество банкнот в банкомате, случайные числа, кроме 5
+        int atmBill10 = 5;
+        int atmBill1 = 358;
         int cashHundreds = cash / 100;
         int cashDozens = cash % 100 / 10;
         int cashOnes = cash % 10;
-        cashOnes += (cashDozens - 5) * 10;
-        cashDozens = 5;
+        if(cashHundreds > atmBill100) {
+            cashDozens += (cashHundreds - atmBill100) * 10;
+            cashHundreds = atmBill100;
+        }
+        if(cashDozens > atmBill10) {
+            cashOnes += (cashDozens - atmBill10) * 10;
+            cashDozens = atmBill10;
+        }
+        if(cashOnes > atmBill1) {
+            System.out.println("Выдача невозможна");
+        }
         int cashToIssue = cashHundreds * 100 + cashDozens * 10 + cashOnes;
-        System.out.println("Номиналы банкнот:\n" + atmBill1 + " USD\n" + atmBill2 + " USD\n" +
-                atmBill3 + " USD\n" + "Для выдачи необходимо:\n" + atmBill1 + " USD " +
-                cashHundreds + " шт.\n" + atmBill2 + " USD " + cashDozens + " шт.\n" + atmBill3 +
-                " USD " + cashOnes + " шт.");
+        System.out.println("Номиналы банкнот:\n" + "100 USD " + atmBill100 + " шт.\n10 USD " + 
+                atmBill10 + " шт.\n 1 USD " + atmBill1 + " шт.\n" +
+                "Для выдачи необходимо:\n 100 USD " + cashHundreds + " шт.\n10 USD " + cashDozens +
+                " шт.\n1 USD " + cashOnes + " шт.");
         if(cashToIssue == cash) {
             System.out.println("Исходная подсчитанная сумма = " + cashToIssue);
         } else {
-            System.out.println("Ошибка при  выдаче срадств, обратитесь к оператору");
+            System.out.println("Ошибка при  выдаче средств, обратитесь к оператору");
         }
     }
 }
