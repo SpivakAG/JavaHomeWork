@@ -43,7 +43,7 @@ public class IfElseStatementTheme {
 
         System.out.println("\n3. Работа с числом");
         int num3 = 123;
-        if(num3 != 0){
+        if(num3 != 0) {
             if(num3 % 2 == 0) {
                 System.out.println("Число " + num3 + " четное");
             } else {
@@ -96,14 +96,12 @@ public class IfElseStatementTheme {
         double finalSum = 0;
         if(deposit < 100000) {
             finalSum = deposit * 1.05;
-            accruedInterest = finalSum - deposit;
-        } else if(deposit >= 100000 && deposit <= 300000){
+        } else if(deposit >= 100000 && deposit <= 300000) {
             finalSum = deposit * 1.07;
-            accruedInterest = finalSum - deposit;
         } else {
             finalSum = deposit * 1.1;
-            accruedInterest = finalSum - deposit;
         }
+        accruedInterest = finalSum - deposit;
         System.out.println("Сумма вклада = " + deposit + " , начисленный процент = " 
                 + accruedInterest + " , итоговая сумма = " + finalSum);
 
