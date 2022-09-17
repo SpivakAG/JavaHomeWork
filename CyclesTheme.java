@@ -165,5 +165,30 @@ public class CyclesTheme {
             j = 0;
         }while(i < 2);
 
+        System.out.println("\n7. Отображение ASCII-символов");
+        for(char k = 1; k < 48; k += 2) {
+            System.out.printf("%3d %c\n",(int) k , k);
+        }
+        for(char k = 98; k < 123; k += 2) {
+            System.out.printf("%3d %c\n",(int) k , k);
+        }
+
+        System.out.println("\n8. Проверка, является ли число палиндромом");
+        int num10 = 1234321;
+        int rev = 0;
+        int isNum10Pal = num10;
+        while (isNum10Pal != 0) {
+            rev *= 10;
+            rev += isNum10Pal % 10;
+            isNum10Pal /= 10;
+        }
+        if(num10 == rev) {
+            System.out.println("Число " + num10 + " является палиндромом");
+        } else {
+            System.out.println("Число " + num10 + " не является палиндромом");
+        }
+
+        System.out.println("\n9. Определение, является ли число счастливым");
+
     }
 }
