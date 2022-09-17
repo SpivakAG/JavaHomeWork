@@ -189,6 +189,35 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9. Определение, является ли число счастливым");
+        int num11 = 125216;
+        int startSum = 0;
+        int endSum = 0;
+        int tmpStart = num11 / 1000;
+        int tmpEnd = num11 % 1000;
+        int tmp = 0;
+        System.out.print("Сумма цифр ");
+        while(tmpStart != 0) {
+            tmp = tmpStart % 10;
+            System.out.print(tmp + " ");
+            startSum += tmp;
+            tmpStart /= 10;
+        }
+        System.out.println("= " + startSum);
+        System.out.print("Сумма цифр ");
+        while(tmpEnd != 0) {
+            tmp = tmpEnd % 10;
+            System.out.print(tmp + " ");
+            endSum += tmp;
+            tmpEnd /= 10;
+        }
+        System.out.println("= " + endSum);
+        if(startSum == endSum) {
+            System.out.println("Число " + num11 + " является счастливым");
+        } else {
+            System.out.println("Число " + num11 + " не является счастливым");
+        }
+
+        System.out.println("");
 
     }
 }
