@@ -217,7 +217,27 @@ public class CyclesTheme {
             System.out.println("Число " + num11 + " не является счастливым");
         }
 
+        System.out.println("\n10. Вывод таблицы умножения Пифагора");
+        int a = 2;
+        int b = 2;
+        int mult = 0;
+        char vertLine = '|';
+        char horLine = '_';
+        System.out.print("   " + vertLine);
+        int k = 0;
+        for(b = 2; b < 10; b++) {
+            System.out.printf("%3d", b);
+            k++;
+        }
         System.out.println("");
-
+        System.out.println("---+------------------------");
+        for(a = 2; a < 10; a++) {
+            System.out.printf("%2d%2c", a, vertLine);
+            for(b = 2; b < 10; b++) {
+                mult = a * b;
+                System.out.printf("%3d", mult);
+            }
+            System.out.println("");
+        }
     }
 }
