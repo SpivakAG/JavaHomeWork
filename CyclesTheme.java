@@ -1,21 +1,20 @@
 public class CyclesTheme {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        int num = -10;
-        int evenSum = 0;
-        int oddSum = 0;
-        int i = 1;
+        int counter = -10;
+        int sumEven = 0;
+        int sumOdd = 0;
         do{
-            if(num % 2 == 0) {
-                evenSum +=  num;
+            if(counter % 2 == 0) {
+                sumEven += counter;
             } else {
-                oddSum += num;
+                sumOdd += counter;
             }
-            num += i;
-        } while (num <= 21);
-        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + evenSum +
-                " , а нечетных = " + oddSum);
+            counter ++;
+        } while (counter <= 21);
+        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumEven +
+                " , а нечетных = " + sumOdd);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания");
         int num1 = 10;
@@ -37,7 +36,7 @@ public class CyclesTheme {
         } else if(num3 < num1 && num3 < num2) {
             min = num3;
         }
-        for(i = max; i >= min; i--) {
+        for(int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
         }
 
@@ -45,40 +44,21 @@ public class CyclesTheme {
         int num4 = 1234;
         int sum = 0;
         int reverseNum4 = 0;
+        System.out.print("Исходное число в обратном порядке: ");
         while(num4 > 0) {
             sum += num4 % 10;
-            reverseNum4 *= 10;
-            reverseNum4 += num4 % 10;
+            reverseNum4 = num4 % 10;
             num4 /= 10;
+            System.out.print(reverseNum4);
         }
-        System.out.println("Исходное число в обратном порядке: " + reverseNum4 + ", cумма цифр = " +
-                sum);
+        System.out.println(", cумма цифр = " + sum);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
+
         int num5 = 1;
         int num6 = 24;
         int count = 1;
-        for(i = 1; i < num6; i += 2) {
-            if(count > 4) {
-                System.out.printf("%3d%n", i);
-                count = 1;
-            } else {
-                if( i + 2 * (5 - count) > num6) {
-                    System.out.printf("%3d", 0);
-                    i -=2;
-                } else {
-                System.out.printf("%3d", i);
-                }
-                count++;
-            }
-        }
-        System.out.println(" ");
-
-
-        num5 = 1;
-        num6 = 24;
-        count = 1;
-        for(i = 1; i < num6; i += 2) {
+        for(int i = 1; i < num6; i += 2) {
             if(count > 4) {
                 System.out.printf("%3d%n", i);
                 count = 1;
@@ -88,7 +68,7 @@ public class CyclesTheme {
                 }
             }
         if(count <= 6) {
-            for(i = count; i < 6; i++) {
+            for(int i = count; i < 6; i++) {
             System.out.printf("%3d", 0);
             }
         }
@@ -96,21 +76,22 @@ public class CyclesTheme {
 
         System.out.println("\n5. Проверка количества единиц на четность");
         int num7 = 3141591;
-        int isEven = 0;
-        int evenCount = 0;
-        int oddCount = 0;
-        i = num7;
+        int countOnes = 0;
+        int i = num7;
         while(i > 0) {
-            isEven = i % 10;
-            if(isEven %2 ==0) {
-                evenCount++;
-            } else {
-                oddCount++;
+            int digit = i % 10;
+            if(digit == 1) {
+                countOnes++;
             }
             i /= 10;
         }
-        System.out.println("Число " + num7 +" содержит " + evenCount +
-                " четное количество единиц, " + oddCount + " нечетное количество единиц");
+        System.out.print("Число " + num7 +" содержит " + countOnes +" единиц(ы), ");
+        if(countOnes % 2 ==0) {
+            System.out.println("это количество четное");
+        } else {
+            System.out.println("это количество нечетное");
+        }
+
 
         System.out.println("\n6. Отображение фигур в консоли");
         char asterisk = '*';
