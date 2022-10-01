@@ -44,8 +44,8 @@ public class CyclesTheme {
         int sum = 0;
         System.out.print("Исходное число в обратном порядке: ");
         while(num4 > 0) {
-            sum += num4 % 10;
             int digit = num4 % 10;
+            sum += digit;
             num4 /= 10;
             System.out.print(digit);
         }
@@ -54,20 +54,19 @@ public class CyclesTheme {
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
         int count = 1;
         for(int i = 1; i < 24; i += 2) {
-            if(count > 4) {
-                System.out.printf("%3d%n", i);
+            if(count == 6) {
+                System.out.println();
                 count = 1;
-            } else {
-                System.out.printf("%3d", i);
-                count++;
-                }
+            }
+            System.out.printf("%3d", i);
+            count++;
             }
         if(count <= 6) {
             for(int i = count; i < 6; i++) {
-            System.out.printf("%3d", 0);
+                System.out.printf("%3d", 0);
             }
         }
-        System.out.println("");
+        System.out.println();
 
         System.out.println("\n5. Проверка количества единиц на четность");
         int num7 = 3141591;
@@ -92,7 +91,7 @@ public class CyclesTheme {
             for(int j = 0; j < 10; j++) {
                 System.out.print("" + '*');
             }
-            System.out.print("\n");
+            System.out.println();
         }
 
         int h = 0;
@@ -104,7 +103,7 @@ public class CyclesTheme {
                 j++;
             }
             num8 -= 1;
-            System.out.print("\n");
+            System.out.println();
             h++;
             j = 0;
         }
@@ -118,7 +117,7 @@ public class CyclesTheme {
                 j++;
             } while(j < num9);
             num9++;
-            System.out.print("\n");
+            System.out.println();
             h++;
             j = 0;
         } while (h < 3);
@@ -130,7 +129,7 @@ public class CyclesTheme {
                 System.out.print('$');
                 j++;
             } while(j < num9);
-            System.out.print("\n");
+            System.out.println();
             num9 -= 1;
             h++;
             j = 0;
@@ -146,13 +145,13 @@ public class CyclesTheme {
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
         int num10 = 1234321;
-        int rev = 0;
+        int reverse = 0;
         int copyNum10 = num10;
         while (copyNum10 != 0) {
-            rev = (rev *10) + copyNum10 % 10;
+            reverse = (reverse * 10) + copyNum10 % 10;
             copyNum10 /= 10;
         }
-        if(num10 == rev) {
+        if(num10 == reverse) {
             System.out.println("Число " + num10 + " является палиндромом");
         } else {
             System.out.println("Число " + num10 + " не является палиндромом");
@@ -195,7 +194,7 @@ public class CyclesTheme {
             System.out.printf("%3d", b);
             k++;
         }
-        System.out.println("");
+        System.out.println();
         System.out.println("---+------------------------");
         for(int a = 2; a < 10; a++) {
             System.out.printf("%2d%2c", a, '|');
@@ -203,7 +202,7 @@ public class CyclesTheme {
                 mult = a * b;
                 System.out.printf("%3d", mult);
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
