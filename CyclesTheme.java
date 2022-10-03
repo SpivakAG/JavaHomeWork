@@ -60,7 +60,7 @@ public class CyclesTheme {
             }
             System.out.printf("%3d", i);
             count++;
-            }
+        }
         if(count <= 6) {
             for(int i = count; i < 6; i++) {
                 System.out.printf("%3d", 0);
@@ -94,46 +94,52 @@ public class CyclesTheme {
             System.out.println();
         }
 
-        int h = 0;
-        int j = 0;
+        int row = 0;
+        int column = 0;
         int num8 = 5;
-        while(h < 5) {
-            while(j < num8) {
+        while(row < 5) {
+            while(column < num8) {
                 System.out.print("" + '#');
-                j++;
+                column++;
             }
             num8 -= 1;
             System.out.println();
-            h++;
-            j = 0;
+            row++;
+            column = 0;
         }
 
-        h = 0;
-        j = 0;
+        row = 0;
+        column = 0;
         int num9 = 1;
+        boolean isVertexReached = false;
         do {
             do {
                 System.out.print('$');
-                j++;
-            } while(j < num9);
-            num9++;
+                column++;
+            } while(column < num9);
+            if(num9 == 3 || isVertexReached == true) {
+                isVertexReached = true;
+                num9--;
+            }  else {
+                num9++;
+            }
             System.out.println();
-            h++;
-            j = 0;
-        } while (h < 3);
-        h = 0;
-        j = 0;
-        num9 = 2;
-        do {
-            do {
-                System.out.print('$');
-                j++;
-            } while(j < num9);
-            System.out.println();
-            num9 -= 1;
-            h++;
-            j = 0;
-        }while(h < 2);
+            row++;
+            column = 0;
+        } while (row < 5);
+        // row = 0;
+        // column = 0;
+        // num9 = 2;
+        // do {
+        //     do {
+        //         System.out.print('$');
+        //         column++;
+        //     } while(column < num9);
+        //     System.out.println();
+        //     num9 -= 1;
+        //     row++;
+        //     column = 0;
+        // }while(row < 2);
 
         System.out.println("\n7. Отображение ASCII-символов");
         for(int i = 1; i < 48; i += 2) {
