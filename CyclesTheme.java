@@ -11,7 +11,7 @@ public class CyclesTheme {
             } else {
                 sumOdd += counter;
             }
-            counter ++;
+            counter++;
         } while (counter <= 21);
         System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumEven +
                 " , а нечетных = " + sumOdd);
@@ -66,9 +66,8 @@ public class CyclesTheme {
                 System.out.printf("%3d", 0);
             }
         }
-        System.out.println();
 
-        System.out.println("\n5. Проверка количества единиц на четность");
+        System.out.println("\n\n5. Проверка количества единиц на четность");
         int num7 = 3141591;
         int countOnes = 0;
         int copyNum7 = num7;
@@ -127,19 +126,6 @@ public class CyclesTheme {
             row++;
             column = 0;
         } while (row < 5);
-        // row = 0;
-        // column = 0;
-        // num9 = 2;
-        // do {
-        //     do {
-        //         System.out.print('$');
-        //         column++;
-        //     } while(column < num9);
-        //     System.out.println();
-        //     num9 -= 1;
-        //     row++;
-        //     column = 0;
-        // }while(row < 2);
 
         System.out.println("\n7. Отображение ASCII-символов");
         for(int i = 1; i < 48; i += 2) {
@@ -169,23 +155,20 @@ public class CyclesTheme {
         int secondHalfSum = 0;
         int firstHalfNum = num11 / 1000;
         int secondHalfNum = num11 % 1000;
-        int tmp = 0;
-        System.out.print("Сумма цифр ");
-        while(firstHalfNum != 0) {
-            tmp = firstHalfNum % 10;
-            System.out.print(tmp + " ");
-            firstHalfSum += tmp;
+        int temp1 = 0;
+        int temp2 = 0;
+        while(firstHalfNum != 0 && secondHalfNum != 0) {
+            temp1 = firstHalfNum % 10;
+            temp2 = secondHalfNum % 10;
+            firstHalfSum += temp1;
+            secondHalfSum += temp2;
             firstHalfNum /= 10;
-        }
-        System.out.println("= " + firstHalfSum);
-        System.out.print("Сумма цифр ");
-        while(secondHalfNum != 0) {
-            tmp = secondHalfNum % 10;
-            System.out.print(tmp + " ");
-            secondHalfSum += tmp;
             secondHalfNum /= 10;
         }
-        System.out.println("= " + secondHalfSum);
+        firstHalfNum = num11 / 1000;
+        secondHalfNum = num11 % 1000;
+        System.out.println("Сумма цифр " + firstHalfNum + " равна " + firstHalfSum);
+        System.out.println("Сумма цифр " + secondHalfNum + " равна " + secondHalfSum);
         if(firstHalfSum == secondHalfSum) {
             System.out.println("Число " + num11 + " является счастливым");
         } else {
