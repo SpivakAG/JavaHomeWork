@@ -5,7 +5,6 @@ public class Person {
     int height = 180;
     double weight = 76.5;
     int age = 56;
-    //идти, сидеть, бежать, говорить, учить Java
 
      int move() {
         System.out.println("Сделано много шагов");
