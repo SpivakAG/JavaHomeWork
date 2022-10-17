@@ -6,7 +6,7 @@ public class Person {
     double weight = 76.5;
     int age = 56;
 
-     int move() {
+    int move() {
         System.out.println("Сделано много шагов");
         return 300;
     }
@@ -26,5 +26,4 @@ public class Person {
     void learnJava() {
         System.out.println("Процесс изучения запущен");
     }
-
 }
