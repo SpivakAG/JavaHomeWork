@@ -1,9 +1,9 @@
-public class Person() {
+public class Person {
 
     String name = "Инокентий";
     String sex = "male";
     int height = 180;
-    double weight 76,5;
+    double weight = 76.5;
     int age = 56;
     //идти, сидеть, бежать, говорить, учить Java
 
@@ -23,8 +23,9 @@ public class Person() {
     String speak() {
         return "Голосовой модуль исправен";
     }
-}
 
     void learnJava() {
         System.out.println("Процесс изучения запущен");
     }
+
+}
