@@ -3,14 +3,16 @@ public class Wolf {
     private String name;
     private int weight;
     private int age;
-    private String colour;
+    private String color;
 
     public String getSex() {
         return sex;
     }
 
-    void setSex(String sex) {
-        if(sex == "male" || sex == "female") {
+    public void setSex(String sex) {
+        String sex1 = "male";
+        String sex2 = "female";
+        if(sex.equals(sex1) || sex.equals(sex2)) {
             this.sex = sex;
         } else {
             System.out.println("Некорректный пол");
@@ -21,7 +23,7 @@ public class Wolf {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -29,7 +31,7 @@ public class Wolf {
         return weight;
     }
 
-    void setWeight(int weight) {
+    public void setWeight(int weight) {
         if(weight <= 0) {
             System.out.println("Некорректный вес");
         } else {
@@ -37,7 +39,7 @@ public class Wolf {
         }
     }
 
-    public int getAge(){;
+    public int getAge() {
         return age;
     }
 
@@ -49,12 +51,12 @@ public class Wolf {
         }
     }
 
-    public String getColour() {
-        return colour;
+    public String getColor() {
+        return color;
     }
 
-    void setColour(String colour) {
-        this.colour = colour;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public void move() {
