@@ -1,4 +1,4 @@
-public class WolfTest{
+public class WolfTest {
     public static void main(String[] args) {
         Wolf wolfOne = new Wolf();
         wolfOne.sex = "male";
@@ -17,6 +17,5 @@ public class WolfTest{
         wolfOne.run();
         System.out.println(wolfOne.howl());
         wolfOne.hunt();
-
     }
 }
