@@ -11,8 +11,6 @@ public class CalculatorTest {
         char sign = scan.next().charAt(0);
         System.out.println("Введите второе число");
         int num2 = (int) scan.nextInt();
-
         System.out.println(num1 + " " + sign +" " + num2 + " = " + calc.calculation(num1, num2, sign));
-
     }
 }
