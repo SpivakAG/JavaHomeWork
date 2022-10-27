@@ -16,7 +16,8 @@ public class CalculatorTest {
             int num2 = (int) scan.nextInt();
             System.out.println(num1 + " " + sign +" " + num2 + " = " + calc.calculation(num1, num2, sign));
             do {
-                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                wrongAnswer = false;
+                System.out.println("Хотите продолжить игру? [yes/no]:");
                 scan.nextLine();
                 answer = scan.nextLine();
                 switch(answer) {
@@ -30,7 +31,7 @@ public class CalculatorTest {
                         System.out.println("Ответ не распознан, попробуйте еще");
                         wrongAnswer = true;
                 }
-            } while(wrongAnswer == true);
+            } while(wrongAnswer);
         } while(repeat);
     }
 }

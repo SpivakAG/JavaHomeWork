@@ -34,6 +34,7 @@ public class GuessNumberTest {
                 j++;
             }
             do {
+                wrongAnswer = false;
                 System.out.println("Хотите продолжить игру? [yes/no]:");
                 scan.nextLine();
                 answer = scan.nextLine();
