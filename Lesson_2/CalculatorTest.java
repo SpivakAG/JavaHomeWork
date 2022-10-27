@@ -24,6 +24,7 @@ public class CalculatorTest {
                         repeat = true;
                         break;
                     case "no":
+                        repeat = false;
                         break;
                     default:
                         System.out.println("Ответ не распознан, попробуйте еще");
