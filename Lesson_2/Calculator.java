@@ -1,5 +1,21 @@
 public class Calculator {
-    public double calculation(int num1, int num2, char sign){
+    private int num1;
+    private int num2;
+    private char sign;
+
+    public void setNum1(int num) {
+        num1 = num;
+    }
+
+    public void setNum2(int num) {
+        num2 = num;
+    }
+
+    public void setSign(char sign) {
+        this.sign = sign;
+    }
+
+    public double calculation() {
         double result = num1;
         switch(sign) {
             case '+':
@@ -20,7 +36,7 @@ public class Calculator {
                 }
                 break;
             case '%':
-                result = (num1 * num2) / 100;
+                result = num1 % num2;
                 break;
             default:
                 System.out.println("Знак нераспознан");

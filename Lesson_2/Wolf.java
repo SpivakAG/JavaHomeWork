@@ -10,9 +10,7 @@ public class Wolf {
     }
 
     public void setSex(String sex) {
-        String sex1 = "male";
-        String sex2 = "female";
-        if(sex.equals(sex1) || sex.equals(sex2)) {
+        if(sex.equals("male") || sex.equals("female")) {
             this.sex = sex;
         } else {
             System.out.println("Некорректный пол");
