@@ -18,7 +18,11 @@ public class GuessNumber {
                 checkWin = true;
             }
     }
-    public boolean getCheckWin(){
+    public boolean getCheckWin() {
         return checkWin;
-    } 
+    }
+    public boolean restart() {
+        checkWin = false;
+        return checkWin;
+    }
 }
